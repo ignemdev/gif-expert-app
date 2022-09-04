@@ -1,33 +1,30 @@
 import { GifItem } from './GifItem';
-import { useFetchGifs } from '../hooks/useFetchGifs.js';
-import { GifGridHeader } from './GifGridHeader';
-import { Center, CircularProgress, Divider, Wrap } from '@chakra-ui/react';
+import { useFetchGifs } from '../hooks/useFetchGifs';
 
-export const GifGrid = ( props ) => {
-    const { category, onDeleteCategory } = props;
+export const GifGrid = ({ category }) => {
+
+    const { images, isLoading } = useFetchGifs( category );
     
-    const { images, isLoading } = useFetchGifs(category);
-
     return (
         <>
-            <GifGridHeader { ...props }/>
+            <h3>{ category }</h3>
+            {
+                isLoading && ( <h2>Cargando...</h2> )
+            }
+            
 
-            { isLoading && (
-                <Center>
-                    <CircularProgress isIndeterminate value={ 30 } size='120px'/>
-                </Center>
-            ) }
+            <div className="card-grid">
+                {
+                    images.map( ( image ) => (
+                        <GifItem 
+                            key={ image.id } 
+                            { ...image }
+                        />
+                    ))
+                }
+                
+            </div>
 
-            <Wrap justify='space-evenly' align='center' spacing='30px' marginY={ 5 }>
-                { images.map(image =>
-                    (<GifItem
-                        key={ image?.id }
-                        { ...image }
-                    />)
-                ) }
-            </Wrap>
-
-            <Divider marginY={ 5 }/>
         </>
     )
 }

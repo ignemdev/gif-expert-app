@@ -1,13 +1,13 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
     background-color: rgb(234, 234, 234);
-}
-
-body {
+  }
+  
+  body {
     padding: 60px;
-}
-
-input {
+  }
+  
+  input {
     background-color: white;
     border-radius: 5px;
     border: 1px solid rgb(97, 32, 158);
@@ -16,25 +16,25 @@ input {
     outline: none;
     padding: 10px 15px;
     width: 100%;
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 1.5rem;
-}
-
-h3 {
+  }
+  
+  h3 {
     font-size: 3rem;
     margin-bottom: 5px;
-}
-
-.card-grid {
+  }
+  
+  .card-grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.card {
+  }
+  
+  .card {
     align-content: center;
     align-items: center;
     background-color: white;
@@ -42,22 +42,22 @@ h3 {
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
-    height: 0%;
+    height: 0%;  
     justify-content: center;
     margin-bottom: 20px;
     margin-right: 20px;
     overflow: hidden;
-}
-
-.card p {
+  }
+  
+  .card p {
     background-color: white;
     flex: 1;
     font-size: 1.5rem;
     margin-top: 5px;
     padding: 5px 20px 0px 20px;
     text-align: center;
-}
-
-.card img {
+  }
+  
+  .card img {
     width: 100%;
-}
+  }
